@@ -1,0 +1,45 @@
+
+@import "neutrino.css";
+
+/*
+ * Based on: https://codesandbox.io/s/github/picocss/examples/tree/master/v1-sign-in
+ */
+
+body>main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(100vh - 20rem);
+    padding: 1rem 0;
+}
+
+.container {
+    max-width: 575px;
+}
+
+article {
+    padding: 0;
+    overflow: hidden;
+}
+
+article div {
+    padding: 1.5rem;
+}
+
+p.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+p.current-user {
+    font-size: 1.5em;
+    margin-bottom: calc(var(--typography-spacing-vertical) * 1.5)
+}
+
+p.current-user em {
+    color: var(--code-tag-color);
+}

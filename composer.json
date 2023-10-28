@@ -1,0 +1,29 @@
+{
+    "name":        "simon-downes/caddy-auth",
+    "description": "A simple auth mechanism for Caddy",
+    "keywords":    ["php", "caddy", "forward-auth"],
+    "license":     "MIT",
+    "authors": [
+        {
+            "name":     "Simon Downes",
+            "email":    "simon@simondownes.co.uk",
+            "homepage": "https://simondownes.co.uk",
+            "role":     "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "~8.1",
+        "simon-downes/spl": "dev-master"
+    },
+    "config": {
+        "preferred-install": {
+            "simon-downes/spl": "source"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\": "src/"
+        }
+    }
+}

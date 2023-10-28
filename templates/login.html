@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sierra Delta Dev</title>
+
+    <link rel="stylesheet" href="/main.css" />
+    <script>0</script>
+
+  </head>
+
+  <body>
+    <main class="container">
+      <article>
+        <div>
+          <h1>Authentication</h1>
+
+          {% if user %}
+          <p class="current-user">Signed in as <em>{{ user }}</em></p>
+          <a role="button" href="/signout">Sign Out</a>
+          {% else %}
+          <form method="POST">
+            {% if error %}<p class="error">‼️ Invalid username/password</p>{% endif %}
+            <input type="text" name="username" placeholder="Username" aria-label="Username" value="{{ username }}" required />
+            <input type="password" name="password" placeholder="Password" aria-label="Password" required />
+            <button type="submit">Let me in!</button>
+          </form>
+          {% endif  %}
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
