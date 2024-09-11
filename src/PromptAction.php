@@ -10,8 +10,11 @@ class PromptAction extends BaseAction {
 
     public function __invoke( Request $request ): array|string|Response {
 
+        parent::validate($request);
+
         return SPL::render('login.html', [
-            'user' => $this->getCurrentUser($request),
+            'title' => env('APP_NAME', 'Auth - '. env('AUTH_DOMAIN')),
+            'user'  => $this->getCurrentUser($request),
         ]);
 
     }

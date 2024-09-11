@@ -13,6 +13,8 @@ class VerificationAction extends BaseAction {
 
     public function __invoke( Request $request ): array|string|Response {
 
+        parent::validate($request);
+
         $user = $this->getCurrentUser($request);
 
         if( $user ) {
@@ -25,7 +27,7 @@ class VerificationAction extends BaseAction {
         return Response::redirect("https://{$request->getHost()}/?rd={$target}")->setCookie(
             name: env('COOKIE_NAME', 'auth'),
             value: '',
-            domain: env('AUTH_DOMAIN', ''),
+            domain: env('AUTH_DOMAIN'),
             expires: time() - 86400,
         );
 
